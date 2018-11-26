@@ -14,6 +14,7 @@ public class MainTransaksi extends javax.swing.JFrame {
     /**
      * Creates new form MainTransaksi
      */
+    //public main
     public MainTransaksi() {
         initComponents();
     }
