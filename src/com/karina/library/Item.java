@@ -13,4 +13,17 @@ public class Item {
     private String nama;//variable nama untuk nama item
     private float harga;//variable harga untuk harga dari item
     private int jumlah;//variable jumlah untuk jumlah dari item
+    
+    //membuat konstruktor default
+    public Item() {
+    }
+    
+    //membuat konstruktor berparameter nama, harga, dan jumlah
+    public Item(String nama, float harga, int jumlah) {
+        this.nama = nama;
+        this.harga = harga;
+        this.jumlah = jumlah;
+    }
+    
+    
 }
