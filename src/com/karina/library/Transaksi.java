@@ -11,7 +11,7 @@ import java.util.*;
  */
 public class Transaksi {
     
-    private String code;//variable code untuk transaksi code
+    private final String code;//variable code untuk transaksi code
     private ArrayList<Item> items = new ArrayList<>();//variable items untuk menyimpan list item
     private float total;//variable total untuk menyimpan total
     
@@ -20,6 +20,12 @@ public class Transaksi {
         this.code = code;
         this.total = total;
     }
+    
+    //Setter total
+    public void setTotal(float total) {
+        this.total = total;
+    }
+    
     
     
     
