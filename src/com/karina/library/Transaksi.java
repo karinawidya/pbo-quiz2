@@ -33,8 +33,13 @@ public class Transaksi {
     //output transaksi
     public String printDetail(){
         setTotal();
-        
-    }
-    
-    
+        String string = "";
+        string += "Kode\t\t: "+ this.code +"\n";
+        string += "Daftar belanja : \n";
+        for(Item item : this.items){
+            string += "\t" + item.getNama() + item.getJumlah() +") : "+ "\n"; 
+        }
+        string += "Total\t\t: "+this.total;
+        return string;
+    } 
 }
