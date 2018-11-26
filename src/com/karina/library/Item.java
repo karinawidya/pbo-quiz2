@@ -50,6 +50,10 @@ public class Item {
         this.jumlah = jumlah;
     }
     
+    //menghitung hasil dari item dan jumlah
+    public float getTotal(){
+        return this.harga * this.jumlah;
+    }
     
     
 }
