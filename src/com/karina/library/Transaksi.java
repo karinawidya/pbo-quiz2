@@ -22,11 +22,19 @@ public class Transaksi {
     }
     
     //Setter total
-    public void setTotal(float total) {
+    public void setTotal() {
+        float total = 0;
+        for(Item item : this.items){
+            total += item.getTotal();
+        }
         this.total = total;
     }
     
-    
+    //output transaksi
+    public String printDetail(){
+        setTotal();
+        
+    }
     
     
 }
