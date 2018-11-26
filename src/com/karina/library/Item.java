@@ -55,5 +55,8 @@ public class Item {
         return this.harga * this.jumlah;
     }
     
+    public String toString(){
+        return this.nama;
+    }
     
 }
