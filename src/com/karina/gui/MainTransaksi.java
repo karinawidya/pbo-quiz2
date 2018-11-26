@@ -21,6 +21,8 @@ public class MainTransaksi extends javax.swing.JFrame {
     private DefaultTableModel tbModel;//Jtable model
   
     public MainTransaksi() {
+        
+        
         initComponents();
     }
 
