@@ -5,16 +5,21 @@
  */
 package com.karina.gui;
 
+import java.util.ArrayList;
+import javax.swing.DefaultComboBoxModel;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author ASUS
  */
 public class MainTransaksi extends javax.swing.JFrame {
 
-    /**
-     * Creates new form MainTransaksi
-     */
-    //public main
+    private int id = 0;//variable id untuk id Transaksi
+    private String code;//variable code untuk Transaksi kode
+    private DefaultComboBoxModel cbModel;//Jcombobox model
+    private DefaultTableModel tbModel;//Jtable model
+  
     public MainTransaksi() {
         initComponents();
     }
@@ -28,8 +33,8 @@ public class MainTransaksi extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        code = new javax.swing.JLabel();
-        items = new javax.swing.JLabel();
+        codeLabel = new javax.swing.JLabel();
+        itemsLabel = new javax.swing.JLabel();
         codeText = new javax.swing.JTextField();
         itemsComboBox = new javax.swing.JComboBox<>();
         jumlahText = new javax.swing.JTextField();
@@ -43,9 +48,9 @@ public class MainTransaksi extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        code.setText("Code");
+        codeLabel.setText("Code");
 
-        items.setText("Items");
+        itemsLabel.setText("Items");
 
         itemsComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Kopi", "Susu", "Gula" }));
         itemsComboBox.setSelectedIndex(-1);
@@ -114,8 +119,8 @@ public class MainTransaksi extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(code)
-                    .addComponent(items))
+                    .addComponent(codeLabel)
+                    .addComponent(itemsLabel))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(72, 72, 72)
@@ -146,12 +151,12 @@ public class MainTransaksi extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(code)
+                    .addComponent(codeLabel)
                     .addComponent(codeText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(newButton))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(items)
+                    .addComponent(itemsLabel)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(itemsComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(addButton)
@@ -228,10 +233,10 @@ public class MainTransaksi extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton addButton;
     private javax.swing.JButton cancelButton;
-    private javax.swing.JLabel code;
+    private javax.swing.JLabel codeLabel;
     private javax.swing.JTextField codeText;
-    private javax.swing.JLabel items;
     private javax.swing.JComboBox<String> itemsComboBox;
+    private javax.swing.JLabel itemsLabel;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField jumlahText;
     private javax.swing.JButton newButton;
