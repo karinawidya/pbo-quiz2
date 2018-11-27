@@ -298,7 +298,8 @@ public class MainTransaksi extends javax.swing.JFrame {
     }//GEN-LAST:event_saveButtonActionPerformed
 
     private void cancelButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelButtonActionPerformed
-       
+        newTransaksi() ;
+        this.decId() ;
     }//GEN-LAST:event_cancelButtonActionPerformed
 
     private void jumlahTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jumlahTextActionPerformed
