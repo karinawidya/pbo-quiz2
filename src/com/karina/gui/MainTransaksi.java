@@ -107,6 +107,7 @@ public class MainTransaksi extends javax.swing.JFrame {
             this.removeButton.setEnabled(true) ;
         }
     }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -278,7 +279,13 @@ public class MainTransaksi extends javax.swing.JFrame {
     }//GEN-LAST:event_itemsComboBoxActionPerformed
 
     private void newButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newButtonActionPerformed
-        
+        this.jumlahText.setText ("1") ;
+        this.newButton.setEnabled (false) ;
+        this.cancelButton.setEnabled (true) ;
+        this.addButton.setEnabled (true) ;
+        this.jumlahText.setEnabled (true) ;
+        this.itemsComboBox.setEnabled (true) ;
+        this.codeText.setText (this.setCode()) ;
     }//GEN-LAST:event_newButtonActionPerformed
 
     private void codeTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_codeTextActionPerformed
