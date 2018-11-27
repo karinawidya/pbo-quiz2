@@ -24,7 +24,7 @@ public class TableTransaksi extends DefaultTableModel{
     }
     
     //Getter untuk kolom nama
-    public String[] getColumnName(){
+    public String[] getColumnNama(){
         return this.columns;
     }
 }

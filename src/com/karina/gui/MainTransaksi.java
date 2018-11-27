@@ -5,6 +5,9 @@
  */
 package com.karina.gui;
 
+import com.karina.library.ComboTransaksi;
+import com.karina.library.Item;
+import com.karina.library.TableTransaksi;
 import java.util.ArrayList;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.table.DefaultTableModel;
@@ -19,10 +22,14 @@ public class MainTransaksi extends javax.swing.JFrame {
     private String code;//variable code untuk Transaksi kode
     private DefaultComboBoxModel cbModel;//Jcombobox model
     private DefaultTableModel tbModel;//Jtable model
-  
+    private ArrayList<Item> cart = new ArrayList<>();//variabel pembelanjaan untuk menampilkan transaksi item
+    
+   //konstruktor
     public MainTransaksi() {
-        
-        
+        ComboTransaksi comboTransaksi = new ComboTransaksi();
+        this.cbModel = new DefaultComboBoxModel<>(comboTransaksi.getNama().toArray());
+        TableTransaksi tableTransaksi = new TableTransaksi();
+        this.tbModel = new DefaultTableModel(tableTransaksi.getColumnNama(), 0);
         initComponents();
     }
 
