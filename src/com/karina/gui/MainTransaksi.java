@@ -42,6 +42,14 @@ public class MainTransaksi extends javax.swing.JFrame {
     private void decId(){
         this.id -= 1;
     }
+    //set fungsi code
+    private String setCode(){
+        this.incId();
+        //untuk pemformatan tanggal
+        String st = new SimpleDateFormat("yyMMdd").format(new Date());
+        this.code = String.format(st+"%02d", this.id);
+        return code;
+    }
     
     /**
      * This method is called from within the constructor to initialize the form.
