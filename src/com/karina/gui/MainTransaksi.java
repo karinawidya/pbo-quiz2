@@ -293,7 +293,17 @@ public class MainTransaksi extends javax.swing.JFrame {
     }//GEN-LAST:event_codeTextActionPerformed
 
     private void addButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addButtonActionPerformed
-        
+        //mendapatkan item yang telah dipilih
+        String nama = this.itemsComboBox.getSelectedItem().toString() ;
+        //jumlahText disetting sebagai Integer
+        int jumlah = new Integer (this.jumlahText.getText()) ;
+        //mengecek apakah suatu barang ada yang double atau tidak
+        if (isDuplicate(nama)) {
+            updateJumlah (nama , jumlah) ;
+        } else {
+            tbModel.addRow(addItem(nama , jumlah));
+        }
+        this.belanja () ;
     }//GEN-LAST:event_addButtonActionPerformed
 
     /**
