@@ -5,6 +5,7 @@
  */
 package com.karina.library;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 
 /**
@@ -21,5 +22,13 @@ public class ComboTransaksi {
         this.items.put("Susu", new Float(20000));
     }
     
+    //menambahkan method ArrayList untuk menambah item berdasarkan nama item
+    public ArrayList<String> getNama(){
+        ArrayList<String> string = new ArrayList<>();
+        for(String item : this.items.keySet()){
+            string.add(item);
+        }
+        return string;
+    }
     
 }
