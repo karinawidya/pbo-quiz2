@@ -93,7 +93,10 @@ public class MainTransaksi extends javax.swing.JFrame {
         }
         return result ;
     }
-
+    //mengecek jika terdapat isi tabel kosong
+    private boolean isEmpty() {
+        return this.transaksiTable.getModel().getRowCount() <= 0 ;
+    }
     
     /**
      * This method is called from within the constructor to initialize the form.
