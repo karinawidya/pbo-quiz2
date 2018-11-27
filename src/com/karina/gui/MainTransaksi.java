@@ -50,6 +50,21 @@ public class MainTransaksi extends javax.swing.JFrame {
         this.code = String.format(st+"%02d", this.id);
         return code;
     }
+     private Object[] addItem (String nama , int jumlah) {
+        float harga = 0 ;
+        ComboTransaksi items = new ComboTransaksi () ;
+        for (int i = 0; i < items.getNama().size(); i++) {
+            if (nama.equalsIgnoreCase(items.getNama().get(i))) {
+                harga = items.getHarga().get(i) ;
+            }
+        }
+        Object[] obj = {
+            nama ,
+            harga ,
+            jumlah ,
+        } ;
+        return obj ;
+    }
     
     /**
      * This method is called from within the constructor to initialize the form.
