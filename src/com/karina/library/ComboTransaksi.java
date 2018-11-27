@@ -31,4 +31,12 @@ public class ComboTransaksi {
         return string;
     }
     
+    //menambahkan mthod ArrayList untuk menambahkan harga pada item
+    public ArrayList<Float> getHarga(){
+        ArrayList<Float> flt = new ArrayList<>();
+        for(float item : this.items.values()){
+            flt.add(item);
+        }
+        return flt;
+    }
 }
