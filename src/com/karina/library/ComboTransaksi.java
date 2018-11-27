@@ -41,7 +41,7 @@ public class ComboTransaksi {
     }
     
     //menambahkan method addItem yang berisikan nama dan harga dari item
-    public void additem(String nama, float harga){
+    public void addItem(String nama, float harga){
         this.items.put(nama, harga);
     }
 }
