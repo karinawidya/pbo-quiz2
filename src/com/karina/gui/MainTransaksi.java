@@ -271,7 +271,20 @@ public class MainTransaksi extends javax.swing.JFrame {
     }//GEN-LAST:event_jumlahTextActionPerformed
 
     private void removeButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removeButtonActionPerformed
-      
+        //mengecek apakah ada baris yang dipilih
+        if (transaksiTable.getSelectedRow() <0) {
+            //apabila tidak ada , maka akan muncul tulisan 
+            String sbr = "Pilihlah item yang akan dihapus" ;
+            JOptionPane.showMessageDialog(this , sbr , "Information" , JOptionPane.INFORMATION_MESSAGE) ;  
+        } else {
+            //apabila ada baris yg dipilih , maka baris tersebut akan dihapus
+            int count = transaksiTable.getSelectedRows().length ;
+            for (int i = 0; i < count; i++) {
+                tbModel.removeRow(transaksiTable.getSelectedRow()) ;
+            }
+            
+        }
+        this.belanja() ;
     }//GEN-LAST:event_removeButtonActionPerformed
 
     private void itemsComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemsComboBoxActionPerformed
