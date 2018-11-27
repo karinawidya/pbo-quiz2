@@ -16,6 +16,7 @@ public class TableTransaksi extends DefaultTableModel{
     //kolom String array yang berfungsi untuk menyimpan nama kolom
     private String[] columns;
     
+    //konstruktor
     public TableTransaksi(){
         this.columns = new String[] {
             "Nama", "Harga", "Jumlah"
