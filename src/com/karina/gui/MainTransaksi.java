@@ -97,7 +97,16 @@ public class MainTransaksi extends javax.swing.JFrame {
     private boolean isEmpty() {
         return this.transaksiTable.getModel().getRowCount() <= 0 ;
     }
-    
+    //mendisable tombol remove dan save jika terdapet isi tabel kosong yang tidak dipilih
+    private void belanja() {
+        if (isEmpty()) {
+            this.saveButton.setEnabled(false) ;
+            this.removeButton.setEnabled(false) ;
+        } else {
+            this.saveButton.setEnabled(true) ;
+            this.removeButton.setEnabled(true) ;
+        }
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
