@@ -50,7 +50,8 @@ public class MainTransaksi extends javax.swing.JFrame {
         this.code = String.format(st+"%02d", this.id);
         return code;
     }
-     private Object[] addItem (String nama , int jumlah) {
+    //untuk menyimpan item yang dipilih yaitu nama, harga, dan jumlah
+    private Object[] addItem (String nama , int jumlah) {
         float harga = 0 ;
         ComboTransaksi items = new ComboTransaksi () ;
         for (int i = 0; i < items.getNama().size(); i++) {
@@ -64,6 +65,19 @@ public class MainTransaksi extends javax.swing.JFrame {
             jumlah ,
         } ;
         return obj ;
+    }
+    //mengupdate fungsi jumlah yang diinginkan
+    private void updateJumlah (String nama , int add) {
+        ArrayList<String> item = new ArrayList<> () ;
+        for (int i = 0; i < tbModel.getRowCount(); i++) {
+            item.add (tbModel.getValueAt (i , 0).toString()) ;
+        }
+        for (int i = 0; i < item.size(); i++) {
+            if (item.get(i).equals(nama)) {
+                int jumlah = new Integer (tbModel.getValueAt (i , 2).toString()) ;
+                tbModel.setValueAt (jumlah+add , i , 2) ;
+            }
+        }
     }
     
     /**
