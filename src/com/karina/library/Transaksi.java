@@ -16,9 +16,9 @@ public class Transaksi {
     private float total;//variable total untuk menyimpan total
     
     //konstruktor berparameter
-    public Transaksi(String code, float total) {
+    public Transaksi(String code, ArrayList<Item> items) {
         this.code = code;
-        this.total = total;
+        this.items = items;
     }
     
     //Setter total
@@ -37,9 +37,9 @@ public class Transaksi {
         string += "Kode\t\t: "+ this.code +"\n";
         string += "Daftar belanja : \n";
         for(Item item : this.items){
-            string += "\t" + item.getNama() + item.getJumlah() +") : "+ "\n"; 
+            string += "\t" + item.getNama() + "(x" + item.getJumlah() +") : "+ item.getTotal() + "\n"; 
         }
-        string += "Total\t\t: "+this.total;
+        string += "Total\t\t: "+ this.total;
         return string;
     } 
 }

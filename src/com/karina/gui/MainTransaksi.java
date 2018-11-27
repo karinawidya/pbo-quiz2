@@ -5,11 +5,12 @@
  */
 package com.karina.gui;
 
-import com.karina.library.ComboTransaksi;
-import com.karina.library.Item;
-import com.karina.library.TableTransaksi;
+import java.text.SimpleDateFormat;
+import com.karina.library.*;
 import java.util.ArrayList;
+import java.util.Date;
 import javax.swing.DefaultComboBoxModel;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -22,7 +23,7 @@ public class MainTransaksi extends javax.swing.JFrame {
     private String code;//variable code untuk Transaksi kode
     private DefaultComboBoxModel cbModel;//Jcombobox model
     private DefaultTableModel tbModel;//Jtable model
-    private ArrayList<Item> cart = new ArrayList<>();//variabel pembelanjaan untuk menampilkan transaksi item
+    private ArrayList<Item> belanja = new ArrayList<>();//variabel pembelanjaan untuk menampilkan transaksi item
     
    //konstruktor
     public MainTransaksi() {
@@ -32,7 +33,16 @@ public class MainTransaksi extends javax.swing.JFrame {
         this.tbModel = new DefaultTableModel(tableTransaksi.getColumnNama(), 0);
         initComponents();
     }
-
+    
+     //untuk penambahan id
+    private void incId(){
+        this.id += 1;
+    }
+    //untuk pengurangan id
+    private void decId(){
+        this.id -= 1;
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -61,6 +71,12 @@ public class MainTransaksi extends javax.swing.JFrame {
 
         itemsLabel.setText("Items");
 
+        codeText.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                codeTextActionPerformed(evt);
+            }
+        });
+
         itemsComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Kopi", "Susu", "Gula" }));
         itemsComboBox.setSelectedIndex(-1);
         itemsComboBox.addActionListener(new java.awt.event.ActionListener() {
@@ -75,30 +91,22 @@ public class MainTransaksi extends javax.swing.JFrame {
             }
         });
 
-        transaksiTable.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null}
-            },
-            new String [] {
-                "Nama", "Harga", "Jumlah"
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.String.class, java.lang.Integer.class, java.lang.Integer.class
-            };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
-        });
+        transaksiTable.setModel(this.tbModel);
         jScrollPane1.setViewportView(transaksiTable);
 
         newButton.setText("New");
+        newButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                newButtonActionPerformed(evt);
+            }
+        });
 
         addButton.setText("Add");
+        addButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addButtonActionPerformed(evt);
+            }
+        });
 
         removeButton.setText("Remove");
         removeButton.addActionListener(new java.awt.event.ActionListener() {
@@ -185,11 +193,12 @@ public class MainTransaksi extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void saveButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveButtonActionPerformed
-        // TODO add your handling code here:
+
+        
     }//GEN-LAST:event_saveButtonActionPerformed
 
     private void cancelButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelButtonActionPerformed
-        // TODO add your handling code here:
+       
     }//GEN-LAST:event_cancelButtonActionPerformed
 
     private void jumlahTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jumlahTextActionPerformed
@@ -197,12 +206,24 @@ public class MainTransaksi extends javax.swing.JFrame {
     }//GEN-LAST:event_jumlahTextActionPerformed
 
     private void removeButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removeButtonActionPerformed
-        // TODO add your handling code here:
+      
     }//GEN-LAST:event_removeButtonActionPerformed
 
     private void itemsComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemsComboBoxActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_itemsComboBoxActionPerformed
+
+    private void newButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newButtonActionPerformed
+        
+    }//GEN-LAST:event_newButtonActionPerformed
+
+    private void codeTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_codeTextActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_codeTextActionPerformed
+
+    private void addButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addButtonActionPerformed
+        
+    }//GEN-LAST:event_addButtonActionPerformed
 
     /**
      * @param args the command line arguments
