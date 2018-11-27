@@ -5,24 +5,21 @@
  */
 package com.karina.library;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 
 /**
  *
  * @author ASUS
  */
-public class TrsComboModel {
-    private HashMap<String, Float> items = new HashMap();
+public class ComboTransaksi {
+    private HashMap<String, Float> items = new HashMap<>();
     
-    //konstruktor untuk TrsComboModel
-    public TrsComboModel() {
+    //konstruktor
+    public ComboTransaksi(){
         this.items.put("Gula", new Float(30000));
         this.items.put("Kopi", new Float(10000));
-        this.items.put("Susu", new Float(2000));
+        this.items.put("Susu", new Float(20000));
     }
-
-    
     
     
 }
