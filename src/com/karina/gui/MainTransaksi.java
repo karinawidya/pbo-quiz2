@@ -107,7 +107,21 @@ public class MainTransaksi extends javax.swing.JFrame {
             this.removeButton.setEnabled(true) ;
         }
     }
-    
+    //melakukan transaksi baru jika sudah menyelesaikan transaksi sebelumnya
+    private void newTransaksi () {
+        this.jumlahText.setText(" ") ;
+        this.codeText.setText(" ") ;
+        this.newButton.setEnabled(true) ;
+        this.saveButton.setEnabled(false) ;
+        this.cancelButton.setEnabled(false) ;
+        this.addButton.setEnabled(false) ;
+        this.removeButton.setEnabled(false) ;
+        this.removeButton.setEnabled(false) ;
+        this.jumlahText.setEnabled(false) ;
+        this.itemsComboBox.setEnabled(false) ;
+        this.tbModel.setRowCount(0) ;
+        this.belanja.clear() ;
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -258,7 +272,7 @@ public class MainTransaksi extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void saveButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveButtonActionPerformed
-
+        
         
     }//GEN-LAST:event_saveButtonActionPerformed
 
