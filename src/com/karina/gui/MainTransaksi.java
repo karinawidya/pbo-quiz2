@@ -79,6 +79,21 @@ public class MainTransaksi extends javax.swing.JFrame {
             }
         }
     }
+    //mengecek apakah ada item double yang terpilih pada item sebelumnya yang sudah dipilih
+    private boolean isDuplicate (String nama) {
+        boolean result = false ;
+        ArrayList <String> item = new ArrayList<>() ;
+        for (int i = 0; i < tbModel.getRowCount(); i++) {
+            item.add (tbModel.getValueAt(i, 0).toString()) ;
+        }
+        for (String i : item) {
+            if (i.equals(nama)) {
+                result = true ;
+            }
+        }
+        return result ;
+    }
+
     
     /**
      * This method is called from within the constructor to initialize the form.
