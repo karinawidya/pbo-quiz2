@@ -272,7 +272,28 @@ public class MainTransaksi extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void saveButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveButtonActionPerformed
-        
+        try {
+            //looping untuk setiap tabel
+            for (int i = 0; i < tbModel.getRowCount(); i++) {
+                // menyimpan nama item dan jumlah item menjadi variable
+                String nama = tbModel.getValueAt (i , 0).toString () ;
+                float harga = new Float (tbModel.getValueAt(i , 1).toString()) ;
+                int jumlah = new Integer (tbModel.getValueAt (i , 2).toString()) ;
+                this.belanja.add (new Item(nama , harga , jumlah)) ;   
+            }
+            //instansiasi kelas Transaksi dengan kode dan menjalankan penyimpanan belanja
+            Transaksi tsk = new Transaksi (this.code , this.belanja) ;
+            //Stringbuilder untuk menangani output Transaksi
+            StringBuilder sbr = new StringBuilder() ;
+            //menambahkan hasil transaksi
+            sbr.append(tsk.printDetail()) ;
+            //memanggil dialog dengan StringBuilder
+            JOptionPane.showMessageDialog(this , sbr , "Transaksi" , JOptionPane.INFORMATION_MESSAGE) ;
+            //digunakan untuk melakukan transaksi baru
+            newTransaksi () ;
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
         
     }//GEN-LAST:event_saveButtonActionPerformed
 
